@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DailyMeal - Prototipo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>DailyMeal</h1>
+      <p>Prototipo dieta settimanale per nutrizionisti e pazienti</p>
+    </header>
+
+    <section id="nutritionistPage" class="card">
+      <div class="topbar">
+        <div>
+          <h2>Dashboard Nutrizionista</h2>
+          <p class="card-description">Compila il piano settimanale del paziente e pubblicalo.</p>
+        </div>
+        <span class="badge">Admin Panel</span>
+      </div>
+
+      <div class="patient-info">
+        <div>
+          <label for="patientName">Nome paziente</label>
+          <input type="text" id="patientName" placeholder="Es. Mario Rossi" />
+        </div>
+        <button onclick="publishWeeklyDiet()">Pubblica piano</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Giorno</th>
+              <th>Colazione</th>
+              <th>Pranzo</th>
+              <th>Spuntino</th>
+              <th>Cena</th>
+            </tr>
+          </thead>
+          <tbody id="weeklyTable"></tbody>
+        </table>
+      </div>
+
+      <p id="saveMessage" class="message"></p>
+
+      <div class="actions">
+        <button class="secondary-button" onclick="fillExampleDiet()">Compila esempio</button>
+        <button onclick="goToPatientPage()">Vai alla pagina paziente</button>
+      </div>
+    </section>
+
+    <section id="patientPage" class="card hidden">
+      <div class="topbar">
+        <div>
+          <h2>Pagina Paziente</h2>
+          <p class="card-description">Il paziente accede e vede automaticamente la dieta del giorno.</p>
+        </div>
+        <button class="secondary-button" onclick="goToNutritionistPage()">Torna alla dashboard</button>
+      </div>
+
+      <div id="loginBox" class="login-box">
+        <h2>Login Paziente</h2>
+        <p class="card-description">Login finto per il prototipo. Inserisci il nome del paziente.</p>
+
+        <label for="loginName">Nome paziente</label>
+        <input type="text" id="loginName" placeholder="Es. Mario Rossi" />
+
+        <button class="full-button" onclick="fakeLogin()">Accedi</button>
+        <p id="loginMessage" class="message danger-text"></p>
+      </div>
+
+      <div id="patientBox" class="hidden">
+        <div class="topbar">
+          <div>
+            <h2 id="welcomeTitle">Ciao!</h2>
+            <p class="card-description">Questa è la tua dieta assegnata dalla nutrizionista.</p>
+          </div>
+          <span id="patientBadge" class="badge"></span>
+        </div>
+
+        <div id="daysNav" class="days-nav"></div>
+
+        <div id="dietResult" class="diet-result"></div>
+
+        <div class="actions">
+          <button class="secondary-button" onclick="logout()">Esci</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
