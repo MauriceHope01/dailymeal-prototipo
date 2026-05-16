@@ -259,11 +259,44 @@ td:first-child {
 
 @media (max-width: 800px) {
   body {
-    padding: 14px;
+    padding: 12px;
+  }
+
+  header {
+    margin-bottom: 20px;
   }
 
   header h1 {
     font-size: 30px;
+  }
+
+  header p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .card {
+    border-radius: 14px;
+    padding: 16px;
+  }
+
+  .topbar {
+    display: block;
+  }
+
+  .topbar .badge,
+  .topbar button {
+    margin-top: 14px;
+  }
+
+  .topbar button,
+  .patient-info button,
+  .full-button {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 22px;
   }
 
   .patient-info,
@@ -271,7 +304,129 @@ td:first-child {
     grid-template-columns: 1fr;
   }
 
+  .patient-info {
+    padding: 14px;
+  }
+
+  .table-wrapper {
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  table {
+    min-width: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  tr:nth-child(even) td {
+    background: #ffffff;
+  }
+
+  td {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px;
+  }
+
+  td:last-child {
+    border-bottom: none;
+  }
+
+  td:first-child {
+    width: 100%;
+    background: #f0fff4;
+    color: #276749;
+    font-size: 16px;
+  }
+
+  td:not(:first-child)::before {
+    display: block;
+    margin-bottom: 6px;
+    color: #52606d;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  td:nth-child(2)::before {
+    content: "Colazione";
+  }
+
+  td:nth-child(3)::before {
+    content: "Pranzo";
+  }
+
+  td:nth-child(4)::before {
+    content: "Spuntino";
+  }
+
+  td:nth-child(5)::before {
+    content: "Cena";
+  }
+
+  textarea {
+    min-height: 92px;
+  }
+
+  .days-nav {
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 8px;
+    scrollbar-width: thin;
+  }
+
+  .day-tab {
+    flex: 0 0 auto;
+    padding: 10px 12px;
+  }
+
+  .diet-result {
+    padding: 14px;
+  }
+
+  .meal-card {
+    padding: 14px;
+  }
+
   .actions button {
     width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 8px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  button {
+    padding: 12px 14px;
   }
 }
